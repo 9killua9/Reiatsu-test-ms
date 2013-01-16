@@ -103,7 +103,58 @@
     <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
     <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
     <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    <img style="display:none;" id="largeImage" src="" />
+    
+    <div data-role="page" id="etapa0">
+    <div data-role="header">
+      <h1>Que queres encontrar ?</h1>
+    </div><!-- /header -->
+    <div data-role="content">   
+        
+        <a href="#etapa1" data-transition="flip" data-role="button"> Busqueda avanzada </a>
+
+        <!-- Boton para la geolocalizacion -->
+        <a href="buscame.php" id="geoLocalizacion" data-role="button" data-icon="search"> Buscar por donde estoy <a>
+
+        <!-- Boton para la registracion -->
+        <a href="registrarme.php" id="registro" data-role="button" data-icon="search"> Registrarme <a>
+
+        <!-- Boton para el logueo -->
+        <a href="login.php" id="login" data-role="button" data-icon="search"> Ingresar <a>  
+    </div><!-- /content -->
+  </div><!-- /page -->
+  <div data-role="page" id="etapa1">
+    <div data-role="header">
+      <h1>Que queres encontrar ?</h1>
+    </div><!-- /header -->
+    <div data-role="content">   
+        <div data-role="fieldcontain"  class="">
+           
+        </div>
+        <a href="#etapa2" data-transition="flip" data-role="button" data-inline="true">Continuar</a>
+        <a href="#etapa0" data-transition="flip" data-role="button" data-inline="true">Volver</a>
+    </div><!-- /content -->
+  </div><!-- /page -->
+  <div data-role="page" id="etapa2">
+    <div data-role="header">
+      <h1>Por donde lo queres encontrar ?</h1>
+    </div><!-- /header -->
+    <div data-role="content">
+       
+        <a href="#etapa3" data-transition="flip" data-role="button" data-inline="true">Continuar</a>
+        <a href="#etapa1" data-transition="flip" data-role="button" data-inline="true">volver</a>
+    </div><!-- /content -->
+  </div><!-- /page -->
+  <div data-role="page" id="etapa3">
+    <div data-role="header">
+      <h1>Ingrese la busqueda</h1>
+    </div><!-- /header -->
+    <div data-role="content">
+        <input type="text" name="nombre" id="name" value="" placeholder="Argentina, Capital Federal" />
+        <input type="submit" id="enviar" value=" buscar " data-transition="flip" data-role="button" data-inline="true" />
+        <a href="#etapa2" data-transition="flip" data-role="button" data-inline="true">Volver</a>
+
+    </div><!-- /content -->
+  </div><!-- /page -->
+</form>
   </body>
 </html>
